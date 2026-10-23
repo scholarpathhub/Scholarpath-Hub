@@ -453,7 +453,7 @@ with st.sidebar:
     track = st.selectbox("Target Academic Level", ["Undergraduate", "Masters"])
     edu_years = st.number_input("Total Years of Education", min_value=1, max_value=25, value=12 if track == "Undergraduate" else 16)
     study_lang = st.selectbox("Desired Language of Instruction", ["English", "Japanese"])
-    
+
     if study_lang == "Japanese":
         exam_type = "JLPT"
         score = st.selectbox("JLPT Score Level", ["N1", "N2", "N3", "N4", "N5", "None"])
@@ -465,7 +465,7 @@ with st.sidebar:
             score = st.number_input("TOEFL Score", min_value=0, max_value=120, value=80, step=1)
 
     bank_balance = st.number_input("Available Funds / Financial Solvency (JPY)", min_value=0, value=2100000, step=50000)
-    
+
     st.subheader("Target Intake Planning")
     intake_semester = st.selectbox("Target Semester", ["October", "April"])
     intake_year = st.selectbox("Target Year", [2026, 2027, 2028, 2029])
@@ -550,9 +550,9 @@ with tab2:
     st.markdown("---")
     st.subheader("5. Export Your Consultation Roadmap PDF")
     st.write("Generate a comprehensive, single-page summary PDF of your matched academic targets, milestones, and visa readiness scorecard.")
-    
+
     pdf_data = generate_pdf_summary(profile, visa_report, matched_programs, milestones, japan_visa_rules)
-    st.download_button(
+    st.download_button( 
         label="📥 Download Full Consultation PDF",
         data=pdf_data,
         file_name="Scholarpath_Hub_Consultation_Roadmap.pdf",
